@@ -23,10 +23,20 @@ System.register(['angular2/core', './mock-heroes'], function(exports_1, context_
         execute: function() {
             HeroService = (function () {
                 function HeroService() {
+                    this.cache = null;
                 }
                 HeroService.prototype.getHeroes = function () {
+                    var _this = this;
                     return new Promise(function (resolve) {
-                        setTimeout(function () { return resolve(mock_heroes_1.HEROES); }, 1000);
+                        if (_this.cache) {
+                            setTimeout(function () { return resolve(_this.cache); }, 1);
+                        }
+                        else {
+                            setTimeout(function () {
+                                _this.cache = mock_heroes_1.HEROES.concat();
+                                resolve(_this.cache);
+                            }, 1000);
+                        }
                     });
                 };
                 HeroService.prototype.getHero = function (id) {

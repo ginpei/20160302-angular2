@@ -4,9 +4,19 @@ import {HEROES} from './mock-heroes';
 
 @Injectable()
 export class HeroService {
+	cache: Hero[] = null;
+
 	getHeroes() {
 		return new Promise<Hero[]>(resolve=>{
-			setTimeout(()=>resolve(HEROES), 1000);
+			if (this.cache) {
+				setTimeout(()=>resolve(this.cache), 1);
+			}
+			else {
+				setTimeout(()=>{
+					this.cache = HEROES.concat();
+					resolve(this.cache)
+				}, 1000);
+			}
 		});
 	}
 
