@@ -10,9 +10,7 @@ import {HeroDetailComponent} from './hero-detail.component';
 
 	styleUrls: ['app/heroes.component.css'],
 
-	directives: [HeroDetailComponent],
-
-	providers: [HeroService]
+	directives: [HeroDetailComponent]
 })
 export class HeroesComponent implements OnInit {
 	heroes: Hero[];
