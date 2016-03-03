@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase /20160302-angular2/
+RewriteRule "^[^.]*$" "index.html"
