@@ -1,7 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {Hero} from './hero';
-import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from './hero.service';
+import {HeroDetailComponent} from './hero-detail.component';
 
 @Component({
 	selector: 'my-app',
@@ -84,7 +84,7 @@ export class AppComponent implements OnInit {
 
 	getHeroes() {
 		this._heroService.getHeroes()
-			.then((heroes:Hero[])=>this.heroes=heroes);
+			.then(heroes=>this.heroes=heroes);
 	}
 
 	onSelect(hero: Hero) {
