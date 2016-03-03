@@ -14,6 +14,7 @@ import {HeroService} from './hero.service';
 			<div><label>id: </label>{{hero.id}}</div>
 			<div><label>name: <input [(ngModel)]="hero.name" type="text" placeholder="Superman"></label></div>
 		</section>
+		<button (click)="goBack()">Go Back</button>
 		`,
 	styleUrls: ['app/hero-detail.component.css']
 })
@@ -23,6 +24,10 @@ export class HeroDetailComponent implements OnInit {
 	constructor(
 		private _heroService: HeroService,
 		private _routeParams: RouteParams) {
+	}
+
+	goBack() {
+		window.history.back();
 	}
 
 	ngOnInit() {
