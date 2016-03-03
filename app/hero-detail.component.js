@@ -42,7 +42,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                     core_1.Component({
                         inputs: ['hero'],
                         selector: 'my-hero-detail',
-                        template: "\n\t\t<section *ngIf=\"hero\">\n\t\t\t<h2>{{hero.name}} details!</h2>\n\t\t\t<div><label>id: </label>{{hero.id}}</div>\n\t\t\t<div><label>name: <input [(ngModel)]=\"hero.name\" type=\"text\" placeholder=\"Superman\"></label></div>\n\t\t</section>\n\t\t<button (click)=\"goBack()\">Go Back</button>\n\t\t",
+                        templateUrl: 'app/hero-detail.component.html',
                         styleUrls: ['app/hero-detail.component.css']
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])

@@ -8,14 +8,7 @@ import {HeroService} from './hero.service';
 
 	selector: 'my-hero-detail',
 
-	template: `
-		<section *ngIf="hero">
-			<h2>{{hero.name}} details!</h2>
-			<div><label>id: </label>{{hero.id}}</div>
-			<div><label>name: <input [(ngModel)]="hero.name" type="text" placeholder="Superman"></label></div>
-		</section>
-		<button (click)="goBack()">Go Back</button>
-		`,
+	templateUrl: 'app/hero-detail.component.html',
 	styleUrls: ['app/hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
