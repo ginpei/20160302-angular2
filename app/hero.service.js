@@ -29,6 +29,10 @@ System.register(['angular2/core', './mock-heroes'], function(exports_1, context_
                         setTimeout(function () { return resolve(mock_heroes_1.HEROES); }, 1000);
                     });
                 };
+                HeroService.prototype.getHero = function (id) {
+                    return this.getHeroes()
+                        .then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
+                };
                 HeroService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])

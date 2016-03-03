@@ -9,4 +9,9 @@ export class HeroService {
 			setTimeout(()=>resolve(HEROES), 1000);
 		});
 	}
+
+	getHero(id) {
+		return this.getHeroes()
+			.then(heroes=>heroes.filter(hero=>hero.id===id)[0]);
+	}
 }
