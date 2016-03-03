@@ -25,7 +25,9 @@ System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_
                 function HeroService() {
                 }
                 HeroService.prototype.getHeroes = function () {
-                    return mock_heroes_1.HEROES;
+                    return new Promise(function (resolve, reject) {
+                        setTimeout(function () { return resolve(mock_heroes_1.HEROES); }, 1000);
+                    });
                 };
                 HeroService = __decorate([
                     core_1.Injectable(), 
